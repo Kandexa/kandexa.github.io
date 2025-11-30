@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://celilkandemir.github.io/sitemap.xml
+Sitemap: https://celilkandemir.com/sitemap.xml
+
 
