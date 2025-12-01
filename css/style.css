@@ -23,6 +23,53 @@
   --nav-height: 70px;
   --transition: 0.2s ease;
 }
+:root[data-theme="dark"] {
+  --bg-body: #020617;
+  --bg-surface: #020617;
+  --bg-soft: #0b1120;
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.25);
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+  --border: #1f2937;
+  --shadow-soft: 0 20px 45px rgba(0, 0, 0, 0.78);
+}
+:root[data-theme="dark"] .navbar {
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom-color: #020617;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.9);
+}
+
+:root[data-theme="dark"] .hero-card,
+:root[data-theme="dark"] .feature-card,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .contact-info-card,
+:root[data-theme="dark"] .contact-form-card {
+  background: #020617;
+  border-color: #1f2937;
+  box-shadow: none !important;
+}
+
+
+/* Sadece profil kartını biraz daha sade yap */
+:root[data-theme="dark"] .hero-card {
+  background: #020617;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+
+:root[data-theme="dark"] .btn-outline {
+  background: #020617;
+  color: var(--text-main);
+  border-color: #1f2937;
+}
+
+:root[data-theme="dark"] .footer {
+  background: #020617;
+  border-top-color: #1f2937;
+}
+
+
 
 html,
 body {
@@ -44,9 +91,11 @@ body {
   top: 0;
   z-index: 50;
   background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
+
 
 .nav-inner {
   max-width: 1100px;
@@ -57,6 +106,32 @@ body {
   justify-content: space-between;
   height: var(--nav-height);
 }
+.nav-theme {
+  display: flex;
+  align-items: center;
+}
+
+.nav-theme #theme-toggle {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  margin-left: 0.4rem;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background var(--transition), border-color var(--transition),
+    transform var(--transition);
+}
+
+.nav-theme #theme-toggle:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+:root[data-theme="dark"] .nav-theme #theme-toggle {
+  background: #020617;
+}
 
 .brand {
   display: flex;
@@ -65,10 +140,32 @@ body {
 }
 
 .brand-logo {
-  background: #111;
-  color: #fff;
-  font-weight: 700;
+  width: 58px;      /* çember boyutu büyüdü */
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
 }
+
+
+
+/* içteki img’yi tam oturtalım */
+.brand-logo img {
+  width: 180%;
+  height: 180%;
+  object-fit: cover;
+  display: block;
+
+  /* TAM ORTALAMA — en önemli satır */
+  transform: translate(- -5%);
+
+}
+
+
 
 
 .brand-text {
@@ -122,6 +219,16 @@ body {
   width: 100%;
 }
 
+/* Aktif sayfa linki */
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
 .nav-lang {
   display: flex;
   gap: 0.3rem;
@@ -173,10 +280,16 @@ body {
     transform var(--transition);
 }
 
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
 .btn-primary {
   background: var(--accent);
   color: #ffffff;
-  box-shadow: var(--shadow-soft);
+box-shadow: none !important;
 }
 
 .btn-primary:hover {
@@ -276,13 +389,11 @@ body {
   height: 90px;
   border-radius: 999px;
   border: 2px solid #e5e7eb;
-  background-image: url("../images/profile.jpg"); /* senin fotoğrafın */
+  background-image: url("../images/profile.jpg");
   background-size: cover;
   background-position: center;
   margin-bottom: 0.6rem;
 }
-
-
 
 .hero-card h2 {
   font-size: 1rem;
@@ -390,6 +501,25 @@ body {
   flex-direction: column;
 }
 
+/* Kart hover efektleri */
+.project-card,
+.feature-card,
+.hero-card,
+.contact-info-card,
+.contact-form-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hero-card:hover,
+.feature-card:hover,
+.project-card:hover,
+.contact-info-card:hover,
+.contact-form-card:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+
 .project-thumb {
   width: 100%;
   height: 160px;
@@ -417,7 +547,26 @@ body {
   padding: 0 1rem 1rem;
 }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+
+.project-tags span {
+  font-size: 0.75rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+}
+
 /* ==== TIMELINE (HAKKIMDA) ==== */
+/* Yol haritası üst boşluk */
+.timeline-section {
+  margin-top: 2.2rem; /* istersen 2.5rem yap, biraz daha açılır */
+}
 
 .timeline {
   margin-top: 1rem;
@@ -453,6 +602,16 @@ body {
 }
 
 /* ==== İLETİŞİM ==== */
+.alert-success {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid #4ade80;
+  background: #ecfdf5;
+  color: #166534;
+  font-size: 0.85rem;
+}
 
 .contact-layout {
   display: grid;
@@ -577,15 +736,171 @@ textarea.form-control {
     order: -1;
   }
 
-  .nav-inner {
-    padding-inline: 1rem;
-  }
-
   .page {
     padding-inline: 1rem;
   }
 
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    height: auto;
+    padding-inline: 1rem;
+    padding-block: 0.6rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+  }
+
+  .page {
+    padding-inline: 1rem;
+  }
+}
+/* ============================
+   CARDS (YENİ – PARLAMASIZ)
+============================ */
+
+.hero-card,
+.feature-card,
+.project-card,
+.contact-info-card,
+.contact-form-card {
+  background: var(--bg-surface);
+  padding: 1.25rem 1.4rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: none;                /* Gölge YOK */
+  transition: transform 0.18s ease, border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+/* Hafif hover: sadece biraz yukarı kalksın, glow yok */
+.hero-card:hover,
+.feature-card:hover,
+.project-card:hover,
+.contact-info-card:hover,
+.contact-form-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.55); /* maviye yakın ince çizgi */
+}
+
+/* Dark mode için özel ayar – parlamasız */
+html[data-theme="dark"] .hero-card,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .contact-info-card,
+html[data-theme="dark"] .contact-form-card {
+  background: #020617;                            /* sayfayla neredeyse aynı */
+  border: 1px solid rgba(15, 23, 42, 0.9);        /* çok ince koyu çizgi */
+  box-shadow: none;                               /* kesinlikle gölge yok */
+}
+
+/* Dark modda hover: sadece çizgi biraz maviye çalsın */
+html[data-theme="dark"] .hero-card:hover,
+html[data-theme="dark"] .feature-card:hover,
+html[data-theme="dark"] .project-card:hover,
+html[data-theme="dark"] .contact-info-card:hover,
+html[data-theme="dark"] .contact-form-card:hover {
+  border-color: rgba(96, 165, 250, 0.8);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   MOBİL / TABLET RESPONSIVE AYARLAR
+========================================= */
+
+/* Tablet ve altı (max 860px) */
+@media (max-width: 860px) {
+  /* Hero 2 sütun yerine tek sütun */
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ne yapıyorum? kartları alt alta */
+/* Ne Yapıyorum? Kart Tasarımı */
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.focus-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
+}
+
+.focus-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.focus-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.focus-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+
+  /* Projeler kartları 2 sütun */
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page {
+    padding-inline: 1rem;
+  }
+
+  .nav-inner {
+    padding-inline: 1rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Küçük telefonlar (max 600px) */
+@media (max-width: 600px) {
+  /* Proje kartları da tek sütun */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-text span:last-child {
+    display: none; /* nav’daki alt satır yazıyı gizle */
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
   }
 }

@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://celilkandemir.com/sitemap.xml
-
-
