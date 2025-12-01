@@ -45,7 +45,7 @@ body {
 .page {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 96px 24px 64px;
+  padding: 64px 24px 48px;  /* üst boşluk azaldı */
 }
 
 /* ========= Navbar ========= */
@@ -88,16 +88,29 @@ body {
 .brand-logo {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-full);
-  background-image: url("../favicon.png"); /* kök dizine favicon.png koy */
+  border-radius: 999px;
+  background-image: url("/favicon.png"); /* <- BURASI DEĞİŞTİ */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
   flex-shrink: 0;
-  text-indent: -9999px; /* içerdeki yazı görünmesin */
+  text-indent: -9999px;
 }
+
+.hero-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  background-image: url("/favicon.png"); /* <- BURASI DEĞİŞTİ */
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #f9fafb;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+}
+
 
 .brand-text {
   display: flex;
@@ -633,10 +646,15 @@ body {
 
 /* ========= Responsive ========= */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  ...
   .page {
-    padding-inline: 20px;
+    padding-top: 72px;      /* daha yukarıda başlasın */
+    padding-inline: 16px;
   }
+  ...
+}
+
 
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -681,10 +699,14 @@ body {
     padding-inline: 16px;
   }
 
-  .hero {
-    flex-direction: column;
-    text-align: left;
-  }
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  margin-top: 8px;  /* yeni satır */
+}
+
 
   .hero-title {
     font-size: 30px;
@@ -748,3 +770,4 @@ body {
     align-items: flex-start;
   }
 }
+
