@@ -1,6 +1,6 @@
 /* css/style.css */
 
-/* =============== GENEL AYARLAR =============== */
+/* ==== GENEL AYARLAR ==== */
 
 * {
   margin: 0;
@@ -37,7 +37,7 @@ body {
   min-height: 100vh;
 }
 
-/* =============== NAVBAR =============== */
+/* ==== NAVBAR ==== */
 
 .navbar {
   position: sticky;
@@ -64,21 +64,12 @@ body {
   gap: 0.6rem;
 }
 
-/* Profil fotolu logo */
 .brand-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  background-image: url("/favicon.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #e5e7eb;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
-  flex-shrink: 0;
-  text-indent: -9999px; /* İçerik varsa görünmesin */
+  background: #111;
+  color: #fff;
+  font-weight: 700;
 }
+
 
 .brand-text {
   display: flex;
@@ -156,15 +147,15 @@ body {
   color: var(--accent);
 }
 
-/* =============== SAYFA LAYOUT =============== */
+/* ==== SAYFA LAYOUT ==== */
 
 .page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 64px 1.5rem 48px; /* Üst boşluk azaltıldı */
+  padding: 2.4rem 1.5rem 3rem;
 }
 
-/* =============== BUTONLAR =============== */
+/* ==== BUTONLAR ==== */
 
 .btn {
   border-radius: 999px;
@@ -203,7 +194,7 @@ body {
   border-color: var(--accent);
 }
 
-/* =============== HERO =============== */
+/* ==== HERO ==== */
 
 .hero {
   min-height: calc(100vh - var(--nav-height));
@@ -211,7 +202,6 @@ body {
   grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
   gap: 2rem;
   align-items: center;
-  margin-top: 8px;
 }
 
 .hero-text {
@@ -281,19 +271,18 @@ body {
   padding: 1.3rem;
 }
 
-/* Hero kartındaki profil görseli */
 .hero-avatar {
   width: 90px;
   height: 90px;
   border-radius: 999px;
-  border: 3px solid #f9fafb;
-  background-image: url("/favicon.png");
+  border: 2px solid #e5e7eb;
+  background-image: url("../images/profile.jpg"); /* senin fotoğrafın */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   margin-bottom: 0.6rem;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
 }
+
+
 
 .hero-card h2 {
   font-size: 1rem;
@@ -326,7 +315,7 @@ body {
   border: 1px solid var(--border);
 }
 
-/* =============== BÖLÜM BAŞLIKLARI =============== */
+/* ==== BÖLÜM BAŞLIKLARI ==== */
 
 .section-header {
   margin-bottom: 1.4rem;
@@ -351,7 +340,7 @@ body {
   color: var(--text-muted);
 }
 
-/* =============== ÖZELLİK KARTLARI / ABOUT =============== */
+/* ==== ÖZELLİK KARTLARI / ABOUT ==== */
 
 .feature-grid {
   display: grid;
@@ -383,7 +372,7 @@ body {
   color: var(--text-muted);
 }
 
-/* =============== PROJE KARTLARI =============== */
+/* ==== PROJE KARTLARI ==== */
 
 .projects-grid {
   display: grid;
@@ -428,7 +417,7 @@ body {
   padding: 0 1rem 1rem;
 }
 
-/* =============== TIMELINE (HAKKIMDA) =============== */
+/* ==== TIMELINE (HAKKIMDA) ==== */
 
 .timeline {
   margin-top: 1rem;
@@ -463,7 +452,7 @@ body {
   color: var(--text-muted);
 }
 
-/* =============== İLETİŞİM =============== */
+/* ==== İLETİŞİM ==== */
 
 .contact-layout {
   display: grid;
@@ -543,7 +532,7 @@ textarea.form-control {
   min-height: 110px;
 }
 
-/* =============== FOOTER =============== */
+/* ==== FOOTER ==== */
 
 .footer {
   border-top: 1px solid var(--border);
@@ -563,7 +552,7 @@ textarea.form-control {
   text-decoration: underline;
 }
 
-/* =============== SCROLL ANİMASYONU =============== */
+/* ==== ANİMASYON ==== */
 
 .reveal-on-scroll {
   opacity: 0;
@@ -576,44 +565,24 @@ textarea.form-control {
   transform: translateY(0);
 }
 
-/* =============== RESPONSIVE =============== */
+/* ==== RESPONSIVE ==== */
 
 @media (max-width: 860px) {
-  .nav-inner {
-    padding-inline: 1rem;
-  }
-
-  .brand-text span:first-child {
-    font-size: 0.88rem;
-  }
-
-  .brand-text span:last-child {
-    font-size: 0.76rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-    font-size: 0.86rem;
-  }
-
-  .page {
-    padding-top: 72px;
-    padding-inline: 1rem;
-  }
-
   .hero {
     grid-template-columns: 1fr;
-    min-height: auto;
     padding-top: 1.2rem;
-    gap: 1.5rem;
   }
 
   .hero-media {
     order: -1;
   }
 
-  .hero-card {
-    max-width: 100%;
+  .nav-inner {
+    padding-inline: 1rem;
+  }
+
+  .page {
+    padding-inline: 1rem;
   }
 
   .contact-layout {
