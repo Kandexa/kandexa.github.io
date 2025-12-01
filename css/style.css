@@ -584,8 +584,57 @@ textarea.form-control {
   .page {
     padding-inline: 1rem;
   }
+/* MOBIL NAVBAR FIX */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .nav-lang {
+    margin-top: 5px;
+  }
+
+  /* HERO responsive */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+
+  .hero-card {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
 
   .contact-layout {
     grid-template-columns: 1fr;
   }
 }
+
