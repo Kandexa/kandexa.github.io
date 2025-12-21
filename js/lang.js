@@ -2,6 +2,10 @@
 
 const translations = {
   tr: {
+    // BRAND
+    "brand.role": "Industrial Software Developer",
+    "brand.stack": "Control & Automation · Python/SQL · Factory Data · IoT",
+
     // NAV
     "nav.home": "Ana Sayfa",
     "nav.projects": "Projeler",
@@ -10,141 +14,123 @@ const translations = {
 
     // HOME
     "home.heroHi": "Merhaba 👋",
-    "home.heroTitle": "Full-Stack + AI Developer",
+    "home.heroTitle": "Industrial Software Developer",
     "home.heroSubtitle":
-      "Web geliştirme, yapay zekâ entegrasyonları ve IoT projelerini birleştirerek tarım, endüstri ve günlük iş süreçleri için akıllı çözümler geliştiriyorum.",
-    "home.heroCtaProjects": "Projelerime göz at",
-    "home.heroCtaContact": "Benimle iletişime geç",
-    "home.sectionTitle": "Ne yapıyorum?",
-    "home.sectionSubtitle":
-      "Web arayüzleri, API’ler, AI destekli araçlar, IoT panelleri ve gerçek müşteriler için özelleştirilmiş yönetim ekranları geliştiriyorum.",
-    "home.heroSubtitle":
-      "Web geliştirme, yapay zekâ entegrasyonları ve IoT projeleriyle; tarım, endüstri ve günlük iş süreçleri için akıllı çözümler geliştiriyorum.",
+      "Kontrol/otomasyon altyapımı yazılımla birleştirerek; fabrika verisi, KPI/OEE, alarm yönetimi ve IoT entegrasyonları için sahaya uygun çözümler geliştiriyorum.",
     "home.remoteBadge": "🚀 Remote & freelance projelere açığım",
-        "home.heroSubtitle":
-      "Web geliştirme, yapay zekâ entegrasyonları ve IoT projeleriyle; tarım, endüstri ve günlük iş süreçleri için akıllı çözümler geliştiriyorum.",
+    "home.heroCtaProjects": "Projeleri Gör",
+    "home.heroCtaContact": "İletişime Geç",
 
     // HERO CARD
-    "home.heroCardRole": "Full-Stack + AI Developer",
+    "home.heroCardRole": "Industrial Software Developer",
     "home.heroCardText":
-      "Web, yapay zekâ ve IoT çözümlerini birleştirerek; akıllı tarım sistemleri, log analiz araçları ve müşteri panelleri geliştiriyorum. Kandexa markası altında projelerimi genişletiyorum. ⚙️💻",
+      "Veriyi sahadan alıp sisteme dönüştürmeyi seviyorum: sensör/cihaz → API → veritabanı → dashboard. Odak: ölçülebilir fayda ve kurulabilir çözümler. ⚙️",
+
+    // HOME SECTION
+    "home.whatTitle": "Ne yapıyorum?",
+    "home.whatSubtitle":
+      "Veri toplama, raporlama ve izleme ihtiyaçları için web arayüzleri, API servisleri ve sahaya uygun mini sistemler geliştiriyorum.",
+
+    "home.card1Title": "Dashboard & Raporlama",
+    "home.card1Text":
+      "KPI/OEE, vardiya özeti, duruş nedenleri ve performans takibi için sade ve hızlı paneller.",
+
+    "home.card2Title": "Alarm & Olay Analizi",
+    "home.card2Text":
+      "Alarm/log kayıtlarından tekrar eden desenleri çıkarma, kök neden ipuçları ve aksiyon listeleri.",
+
+    "home.card3Title": "IoT & Sensör Entegrasyonu",
+    "home.card3Text":
+      "ESP32/Arduino sensör verisini API ile toplayıp veritabanına yazma ve panelde görselleştirme.",
 
     // PROJECTS
-    "projects.title": "Projelerim",
+    "projects.title": "Projeler",
     "projects.subtitle":
-      "GitHub üzerindeki aktif projelerim. Her biri; kod, ekran görüntüsü ve gerçek bir senaryoya göre tasarlanmış arayüz içerir.",
-    "projects.card1Title": "Kandexa Portfolio (kandexa.github.io)",
-    "projects.card1Desc":
-      "Kişisel markam için hazırladığım, GitHub Pages üzerinde yayınlanan portföyüm. Diğer projelere ve sosyal hesaplara açılan temiz bir giriş noktası.",
-    "projects.card2Title": "Kandexa AgriSense – Akıllı Tarım Paneli",
+      "GitHub üzerindeki aktif çalışmalarım. Her biri gerçek bir ihtiyaca göre tasarlanmış, gösterilebilir demo/ürün adımıdır.",
+    "projects.categories":
+      "🧩 Kategoriler: IoT & Sensör Sistemleri · Veri Toplama & Raporlama · Log/Alarm Analizi · Yönetim Panelleri",
+
+    "projects.card2Title": "Kandexa AgriSense — Akıllı Tarım Paneli",
     "projects.card2Desc":
-      "Toprak nemi, sıcaklık, hava nemi ve ışık değerlerini gösteren; ESP32 tabanlı sensör verilerine hazır akıllı tarım kontrol paneli.",
-    "projects.card3Title": "Kandexa AI Log Analyzer",
+      "ESP32 sensör verisine hazır; nem/sıcaklık/ışık gibi ölçümleri izlemek ve raporlamak için dashboard.",
+
+    "projects.card3Title": "Log / Alarm Analyzer",
     "projects.card3Desc":
-      "Sunucu log dosyalarını okuyup INFO/WARNING/ERROR özetini çıkaran, son hatayı yapay zekâ ile yorumlayan log analiz aracı.",
-    "projects.card4Title": "Özel Stok Takip Paneli",
+      "Sunucu/uygulama loglarını sınıflandırıp özetleyen; hata örüntülerini görünür kılan analiz aracı.",
+
+    "projects.card4Title": "Stok Takip Paneli",
     "projects.card4Desc":
-      "Müşteri için geliştirilmiş, ürün tanımı, giriş/çıkış kayıtları, stok özeti ve Excel çıktısı barındıran sade ve kullanışlı stok yönetim paneli.",
+      "Ürün tanımı, giriş/çıkış kayıtları, stok özeti ve çıktı alma özellikleri olan yönetim paneli.",
+
     "projects.githubBtn": "GitHub'da Gör",
 
     // ABOUT
-    "about.title": "Hakkımda",
+    "about.title": "Mehmet Celil Kandemir kimdir?",
     "about.subtitle":
-      "Kontrol & Otomasyon ve Bilgisayar Programcılığı altyapısını; full-stack geliştirme, yapay zekâ entegrasyonları ve IoT projeleriyle birleştiriyorum.",
-    "about.whoTitle": "Ben kimim?",
-    "about.whoText":
-      "Pamukkale Üniversitesi Kontrol & Otomasyon Teknolojisi öğrencisiyim. Anadolu Üniversitesi Bilgisayar Programcılığı ile yazılım tarafımı güçlendiriyorum. Web, AI ve IoT kesişiminde projeler üretip; tarım, endüstri ve küçük işletmeler için sahada gerçekten kullanılabilir çözümler geliştirmeyi hedefliyorum.",
-    "about.timelineTitle": "Yol Haritam 🚀",
-    "about.timeline1Title": "Kısa Vade (0-1 yıl)",
+      "Kontrol & Otomasyon altyapısını yazılım mühendisliği yaklaşımıyla birleştiriyorum. Hedefim: sahada çalışacak, ölçülebilir fayda üreten sistemler geliştirmek.",
+
+    "about.card1Title": "Arka Plan",
+    "about.card1Text":
+      "Pamukkale Üniversitesi Kontrol & Otomasyon Teknolojileri öğrencisiyim. Anadolu Üniversitesi Bilgisayar Programcılığı ile yazılım tarafımı güçlendiriyorum.",
+
+    "about.card2Title": "Teknik Odak",
+    "about.card2Text":
+      "Python/SQL, veri toplama ve raporlama, API geliştirme, dashboard tasarımı, sensör/IoT entegrasyonları. Basit ama sağlam sistemler kurmayı hedeflerim.",
+
+    "about.card3Title": "Hedef",
+    "about.card3Text":
+      "Remote çalışma odaklı ilerlerken; tarım ve endüstri tarafında maliyet/performans dengesi iyi çözümleri ürünleştirmek.",
+
+    "about.card4Title": "Çalışma Şekli",
+    "about.card4Text":
+      "Küçük bir demo ile başlarım: ölçüm → kayıt → rapor → aksiyon. Sonra gerçek kullanıcı geri bildirimiyle ürüne dönüştürürüm.",
+
+    "about.roadmapTitle": "Şimdiye kadar ve sonrası",
+    "about.roadmapSubtitle":
+      "Eğitim, projeler ve odak alanları. Kısa vadede demo/portföy; orta vadede ürünleştirme; uzun vadede global ölçekte çalışma.",
+
+    "about.timeline1Title": "Temel — Kontrol & Otomasyon",
     "about.timeline1Text":
-      "Portföyümdeki full-stack + AI projelerini üretim senaryolarına yaklaştırmak, GitHub ve LinkedIn profilimi işe hazır hâle getirmek.",
-    "about.timeline2Title": "Orta Vade (1-3 yıl)",
+      "Sensörler, kontrol mantığı ve saha gerçekleri. Sistemlerin nasıl çalıştığını bilmek yazılımı doğru tasarlamamı sağlıyor.",
+
+    "about.timeline2Title": "Yazılım — Veri & Dashboard",
     "about.timeline2Text":
-      "Akıllı tarım, stok takibi ve log analizi gibi çözümleri ürünleştirip KOBİ’ler, çiftçiler ve küçük ekipler için kullanılabilir paketlere dönüştürmek.",
-    "about.timeline3Title": "Uzun Vade (3+ yıl)",
+      "API + veritabanı + panel akışını kurup KPI/OEE ve alarm yönetimi gibi gerçek ihtiyaçlara göre ekranlar geliştiriyorum.",
+
+    "about.timeline3Title": "Ürünleştirme — Remote & Global",
     "about.timeline3Text":
-      "Yurt dışı odaklı, remote çalışma imkânı olan full-stack + AI rolleriyle global projelerde yer almak ve IoT/robotik tarafında uzmanlaşmak.",
+      "Projeleri sahada kullanılabilir paketlere dönüştürmek; remote çalışarak hem Türkiye’de hem yurt dışında değer üretmek.",
 
     // CONTACT
     "contact.title": "İletişim",
     "contact.subtitle":
-      "Projeler, iş birlikleri veya sadece bir fikir danışmak için bana yazabilirsin. 💬",
+      "İşbirliği, proje veya teklif için yazabilirsin. Mesajına net ve hızlı dönerim.",
     "contact.locationLabel": "Lokasyon",
     "contact.emailLabel": "E-posta",
-    "contact.socialLabel": "Sosyal Medya",
-    "contact.formTitle": "Bana mesaj bırak",
+    "contact.socialLabel": "Bağlantılar",
+
+    "contact.formTitle": "Mesaj Gönder",
     "contact.formNameLabel": "Ad Soyad",
-    "contact.formEmailLabel": "E-posta Adresi",
-    "contact.formMessageLabel": "Mesajın",
+    "contact.formEmailLabel": "E-posta",
+    "contact.formMessageLabel": "Mesaj",
     "contact.formSubmit": "Mesajı Gönder",
-    "contact.formNamePlaceholder": "Adını ve soyadını yaz",
-    "contact.formEmailPlaceholder": "E-posta adresin",
-    "contact.formMessagePlaceholder": "Kısaca ne hakkında yazdığını anlat",
-    "contact.formMessagePlaceholder": "Kısaca ne hakkında yazdığını anlat",
-    "contact.success":
-      "Mesajın bana ulaştı, en kısa sürede dönüş yapacağım. Teşekkür ederim! 😊",
 
-          // Ne yapıyorum? (Ana sayfa)
-    "home.whatTitle": "Ne yapıyorum?",
-    "home.whatSubtitle":
-      "Web arayüzleri, API'ler, AI destekli araçlar, IoT panelleri ve gerçek müşteriler için özelleştirilmiş yönetim ekranları geliştiriyorum.",
+    // placeholder’lar: senin setLanguage() input/textarea için placeholder basıyor
+    "contact.formNamePlaceholder": "Ad soyadını yaz",
+    "contact.formEmailPlaceholder": "E-posta adresini yaz",
+    "contact.formMessagePlaceholder": "Kısaca ne istediğini / konuyu yaz",
 
-    "home.card1Title": "Full-Stack Web",
-    "home.card1Text":
-      "Uçtan uca çalışan web uygulamaları, yönetim panelleri ve backend API'leri geliştiriyorum.",
-
-    "home.card2Title": "AI Entegrasyonları",
-    "home.card2Text":
-      "OpenAI API ile log analizi, hata açıklama ve akıllı yorumlama özellikleri ekliyorum.",
-
-    "home.card3Title": "IoT & Sensör Sistemleri",
-    "home.card3Text":
-      "ESP32/Arduino sensör verilerini web panellerine aktararak akıllı tarım dashboard’ları tasarlıyorum.",
-
-    // Hakkımda – üst kısım
-    "about.title": "Mehmet Celil Kandemir kimdir?",
-    "about.subtitle":
-      "Kontrol & Otomasyon altyapısını; web geliştirme, yapay zekâ ve IoT ile birleştirerek gerçek sahada kullanılabilir projeler üreten bir geliştiriciyim. Aşağıda hem teknik tarafımı hem de yol haritamı görebilirsin.",
-
-    "about.card1Title": "Kimim?",
-    "about.card1Text":
-      "Pamukkale Üniversitesi Kontrol & Otomasyon Teknolojileri öğrencisiyim. Aynı zamanda Anadolu Üniversitesi Bilgisayar Programcılığı ile yazılım tarafını güçlendiriyorum. Donanım bilgimi, modern web teknolojileri ve yapay zekâ ile birleştirmeyi seviyorum.",
-
-    "about.card2Title": "Nelerle Çalışıyorum?",
-    "about.card2Text":
-      "JavaScript, Node.js, Express, MongoDB, HTML/CSS, Git, REST API, Arduino, ESP32, sensörler, güneş takip sistemleri, log analizi ve OpenAI tabanlı AI entegrasyonları. Hem web arayüzü hem de arka planda çalışan servisleri uçtan uca kuruyorum.",
-
-    "about.card3Title": "Hedefim Ne?",
-    "about.card3Text":
-      "Remote (home-office) çalışarak, özellikle tarım, endüstri ve otomasyon alanlarında akıllı sistemler geliştirmek. Kandexa markası altında; şirketlerin günlük işlerini kolaylaştıran paneller, IoT çözümleri ve AI destekli araçlar üretmeye odaklanıyorum.",
-
-    "about.card4Title": "Ekip Çalışması",
-    "about.card4Text":
-      "Tasarım ve frontend tarafında Ilgın Kıymaz ile birlikte çalışıyorum. Ben daha çok backend, otomasyon ve IoT ile ilgilenirken; Ilgın arayüz tasarımlarını sade ve kullanımı kolay hâle getiriyor. Beraber küçük ölçekli projelerden profesyonel panellere doğru ilerliyoruz.",
-
-    // Hakkımda – Yol haritam
-    "about.roadmapTitle": "Şimdiye kadar ve ilerisi",
-    "about.roadmapSubtitle":
-      "Eğitimim, yaptığım projeler ve bundan sonra odaklanmak istediğim alanları özetleyen küçük bir zaman çizelgesi.",
-
-    "about.timeline1Title": "Temel Altyapı – Kontrol & Otomasyon",
-    "about.timeline1Text":
-      "Endüstriyel kontrol, sensörler, motor sürücüler ve PLC temeli ile sahadaki sistemlerin nasıl çalıştığını öğrendim. Bu sayede yazılım çözümlerimi gerçek dünya ihtiyaçlarına göre tasarlıyorum.",
-
-    "about.timeline2Title": "Full-Stack & AI Geliştirme",
-    "about.timeline2Text":
-      "Node.js ve modern web teknolojileri ile yönetim panelleri, log analiz araçları ve IoT dashboard’ları geliştirmeye başladım. OpenAI API ile hata açıklama, akıllı özetleme ve raporlama özelliklerini projelere entegre ediyorum.",
-
-    "about.timeline3Title": "Remote Çalışma ve Ürünleştirme Hedefi",
-    "about.timeline3Text":
-      "Kandexa çatısı altında geliştirilen projeleri, küçük işletmeler ve tarım/ endüstri tarafındaki firmalar için gerçek ürün hâline getirmeyi hedefliyorum. Uzaktan çalışarak; hem Türkiye’de hem de yurt dışında değer üretmek istiyorum.",
+    "contact.success": "Mesajın ulaştı. En kısa sürede dönüş yapacağım. Teşekkürler! ✅",
 
     // FOOTER
-    "footer.text":
-      "© 2025 Mehmet Celil Kandemir – Full-Stack + AI Developer"
+    "footer.text": "© 2025 Mehmet Celil Kandemir — Industrial Software Developer"
   },
 
   en: {
+    // BRAND
+    "brand.role": "Industrial Software Developer",
+    "brand.stack": "Control & Automation · Python/SQL · Factory Data · IoT",
+
     // NAV
     "nav.home": "Home",
     "nav.projects": "Projects",
@@ -153,142 +139,114 @@ const translations = {
 
     // HOME
     "home.heroHi": "Hi 👋",
-    "home.heroTitle": "Full-Stack + AI Developer",
+    "home.heroTitle": "Industrial Software Developer",
     "home.heroSubtitle":
-      "I build smart solutions for agriculture, industry and everyday workflows by combining web development, AI integrations and IoT projects.",
-    "home.heroCtaProjects": "View my projects",
-    "home.heroCtaContact": "Contact me",
-    "home.sectionTitle": "What do I do?",
-    "home.sectionSubtitle":
-      "I build web interfaces, APIs, AI-powered tools, IoT dashboards and simple admin panels for real-world use-cases and clients.",
-    "home.heroSubtitle":
-      "I build smart solutions for agriculture, industry and everyday workflows by combining web development, AI integrations and IoT projects.",
+      "I combine control/automation with software to build field-ready solutions for factory data, KPI/OEE, alarm workflows and IoT integrations.",
     "home.remoteBadge": "🚀 Open to remote & freelance projects",
-        "home.heroSubtitle":
-      "I build web, AI integrations and IoT projects to create smart solutions for agriculture, industry and daily business processes.",
+    "home.heroCtaProjects": "View Projects",
+    "home.heroCtaContact": "Contact",
 
-    // HERO CARD
-    "home.heroCardRole": "Full-Stack + AI Developer",
+    "home.heroCardRole": "Industrial Software Developer",
     "home.heroCardText":
-      "I combine web, AI and IoT solutions to build smart farming systems, log analysis tools and custom dashboards for clients — expanding my projects under the Kandexa brand. ⚙️💻",
+      "I like turning signals into systems: device/sensor → API → database → dashboard. Focus: measurable impact and deployable solutions. ⚙️",
 
+    "home.whatTitle": "What do I build?",
+    "home.whatSubtitle":
+      "Web dashboards, APIs and small deployable systems for data collection, reporting and monitoring.",
+
+    "home.card1Title": "Dashboards & Reporting",
+    "home.card1Text":
+      "KPI/OEE, shift summaries, downtime reasons and performance tracking in clean dashboards.",
+
+    "home.card2Title": "Alarm & Event Analysis",
+    "home.card2Text":
+      "Extract patterns from alarms/logs, highlight recurring issues and provide action lists.",
+
+    "home.card3Title": "IoT & Sensor Integration",
+    "home.card3Text":
+      "Collect ESP32/Arduino sensor data via API, store it in a database and visualize it.",
 
     // PROJECTS
     "projects.title": "Projects",
     "projects.subtitle":
-      "Active projects on my GitHub. Each one ships with code, screenshots and a realistic scenario behind it.",
-    "projects.card1Title": "Kandexa Portfolio (kandexa.github.io)",
-    "projects.card1Desc":
-      "My personal portfolio hosted on GitHub Pages: a clean, bilingual landing page that links to my core projects and social accounts.",
-    "projects.card2Title": "Kandexa AgriSense – Smart Agriculture Panel",
+      "Active work on GitHub. Each project is designed around a real-world use case and ready to demo.",
+    "projects.categories":
+      "🧩 Categories: IoT & Sensor Systems · Data Collection & Reporting · Log/Alarm Analysis · Admin Panels",
+
+    "projects.card2Title": "Kandexa AgriSense — Smart Agriculture Dashboard",
     "projects.card2Desc":
-      "Dashboard ready for ESP32 sensor data, showing soil moisture, air temperature, humidity and light level for agricultural fields.",
-    "projects.card3Title": "Kandexa AI Log Analyzer",
+      "Dashboard ready for ESP32 sensor data (moisture/temperature/light) for monitoring and reporting.",
+
+    "projects.card3Title": "Log / Alarm Analyzer",
     "projects.card3Desc":
-      "A tool that reads server log files, summarizes INFO/WARNING/ERROR counts and uses AI to explain the latest error in plain language.",
-    "projects.card4Title": "Custom Stock Tracking Panel",
+      "A tool that classifies and summarizes logs and makes recurring failure patterns visible.",
+
+    "projects.card4Title": "Stock Tracking Panel",
     "projects.card4Desc":
-      "A simple yet effective stock management panel built for a client, with product definitions, in/out operations and CSV export.",
+      "A management panel with products, in/out operations, stock summary and export.",
+
     "projects.githubBtn": "View on GitHub",
 
-    // ABOUT
-    "about.title": "About Me",
+    // ABOUT,
+    "about.title": "Who is Mehmet Celil Kandemir?",
     "about.subtitle":
-      "I combine Control & Automation and Computer Programming with full-stack development, AI integrations and IoT projects.",
-    "about.whoTitle": "Who am I?",
-    "about.whoText":
-      "I study Control & Automation Technologies at Pamukkale University and Computer Programming at Anadolu University. I work at the intersection of web, AI and IoT to create solutions that can actually be used in the field by companies, farmers and small teams.",
-    "about.timelineTitle": "My Roadmap 🚀",
-    "about.timeline1Title": "Short Term (0-1 year)",
+      "I combine Control & Automation fundamentals with a software engineering mindset. My goal is to build systems that work in the field and deliver measurable value.",
+
+    "about.card1Title": "Background",
+    "about.card1Text":
+      "I study Control & Automation Technologies at Pamukkale University and Computer Programming at Anadolu University.",
+
+    "about.card2Title": "Technical Focus",
+    "about.card2Text":
+      "Python/SQL, data collection & reporting, API development, dashboard design, and IoT/sensor integrations. Simple, solid and deployable systems.",
+
+    "about.card3Title": "Goal",
+    "about.card3Text":
+      "While progressing toward remote work, I aim to productize cost-effective solutions for agriculture and industry.",
+
+    "about.card4Title": "How I Work",
+    "about.card4Text":
+      "I start with a small demo: measure → store → report → act. Then iterate with real user feedback.",
+
+
+    "about.roadmapTitle": "So far and what’s next",
+    "about.roadmapSubtitle":
+      "Education, projects and focus areas: short-term demos/portfolio, mid-term productization, long-term global remote work.",
+
+    "about.timeline1Title": "Foundation — Control & Automation",
     "about.timeline1Text":
-      "Polish my full-stack + AI projects, make them closer to production and bring my GitHub & LinkedIn profiles to a hiring-ready level.",
-    "about.timeline2Title": "Mid Term (1-3 years)",
+      "Sensors, control logic and field realities. Knowing the system helps design the right software.",
+
+    "about.timeline2Title": "Software — Data & Dashboards",
     "about.timeline2Text":
-      "Turn projects like smart agriculture, stock tracking and log analysis into reusable products for SMEs and small teams.",
-    "about.timeline3Title": "Long Term (3+ years)",
+      "I build API + database + dashboard flows for real needs like KPI/OEE and alarm management.",
+
+    "about.timeline3Title": "Productization — Remote & Global",
     "about.timeline3Text":
-      "Work remotely in global full-stack + AI roles while deepening my experience in IoT and robotics.",
+      "Turn projects into deployable packages and create value remotely in global environments.",
 
     // CONTACT
     "contact.title": "Contact",
     "contact.subtitle":
-      "Reach out about projects, collaborations or just to share an idea. 💬",
+      "Reach out for collaboration, projects or offers. I reply clearly and fast.",
     "contact.locationLabel": "Location",
-    "contact.emailLabel": "E-mail",
-    "contact.socialLabel": "Social",
-    "contact.formTitle": "Send me a message",
+    "contact.emailLabel": "Email",
+    "contact.socialLabel": "Links",
+
+    "contact.formTitle": "Send a Message",
     "contact.formNameLabel": "Full Name",
-    "contact.formEmailLabel": "E-mail Address",
-    "contact.formMessageLabel": "Your Message",
-    "contact.formSubmit": "Send Message",
+    "contact.formEmailLabel": "Email",
+    "contact.formMessageLabel": "Message",
+    "contact.formSubmit": "Send",
+
     "contact.formNamePlaceholder": "Type your full name",
-    "contact.formEmailPlaceholder": "Your e-mail address",
-    "contact.formMessagePlaceholder":
-      "Briefly describe what you want to talk about",
-    "contact.formMessagePlaceholder":
-      "Briefly describe what you want to talk about",
-    "contact.success":
-      "Your message has been delivered. I’ll get back to you as soon as possible. Thank you! 😊",
+    "contact.formEmailPlaceholder": "Type your email",
+    "contact.formMessagePlaceholder": "Briefly describe your request",
 
-          // What I do? (Home)
-    "home.whatTitle": "What do I do?",
-    "home.whatSubtitle":
-      "I design custom management dashboards for real clients using web UIs, APIs, AI-powered tools and IoT panels.",
-
-    "home.card1Title": "Full-Stack Web",
-    "home.card1Text":
-      "I develop end-to-end web applications, admin dashboards and backend APIs.",
-
-    "home.card2Title": "AI Integrations",
-    "home.card2Text":
-      "I integrate OpenAI APIs for log analysis, error explanations and smart insights.",
-
-    "home.card3Title": "IoT & Sensor Systems",
-    "home.card3Text":
-      "I design smart agriculture dashboards by sending ESP32/Arduino sensor data to web panels.",
-
-    // About – top section
-    "about.kicker": "About",
-    "about.title": "Who is Mehmet Celil Kandemir?",
-    "about.subtitle":
-      "I’m a developer who combines control & automation fundamentals with web development, AI and IoT to build real-world, field-ready projects. Below you can see both my technical profile and roadmap.",
-
-    "about.card1Title": "Who am I?",
-    "about.card1Text":
-      "I study Control & Automation Technologies at Pamukkale University and Computer Programming at Anadolu University. I like to combine my hardware background with modern web technologies and AI.",
-
-    "about.card2Title": "What do I work with?",
-    "about.card2Text":
-      "JavaScript, Node.js, Express, MongoDB, HTML/CSS, Git, REST APIs, Arduino, ESP32, sensor & solar-tracking systems, log analysis and OpenAI-based AI integrations. I build both the web UI and the backend services end-to-end.",
-
-    "about.card3Title": "What is my goal?",
-    "about.card3Text":
-      "Work remotely (home-office) and build smart systems especially in agriculture, industry and automation. Under the Kandexa brand I focus on dashboards, IoT solutions and AI-powered tools that make companies’ daily work easier.",
-
-    "about.card4Title": "Teamwork",
-    "about.card4Text":
-      "On the design and frontend side I collaborate with Ilgın Kıymaz. I mostly handle backend, automation and IoT, while Ilgın keeps the interfaces minimal and easy to use. Together we grow from small prototypes to professional panels.",
-
-    // About – roadmap
-    "about.roadmapTitle": "So far and what’s next",
-    "about.roadmapSubtitle":
-      "A short timeline that summarizes my education, projects and the areas I want to focus on next.",
-
-    "about.timeline1Title": "Foundation – Control & Automation",
-    "about.timeline1Text":
-      "I learned how industrial control, sensors, motor drivers and PLC-based systems work in the field. This helps me design software that fits real-world needs.",
-
-    "about.timeline2Title": "Full-Stack & AI Development",
-    "about.timeline2Text":
-      "I started building admin dashboards, log analysis tools and IoT panels with Node.js and modern web tech. I integrate OpenAI APIs for error explanation, smart summaries and reporting.",
-
-    "about.timeline3Title": "Remote Work & Productization",
-    "about.timeline3Text":
-      "Under the Kandexa brand, I want to turn my projects into real products for small businesses and agriculture/industry companies, working remotely while creating value both in Turkey and abroad.",
+    "contact.success": "Message delivered. I’ll get back to you soon. ✅",
 
     // FOOTER
-    "footer.text":
-      "© 2025 Mehmet Celil Kandemir – Full-Stack + AI Developer"
+    "footer.text": "© 2025 Mehmet Celil Kandemir — Industrial Software Developer"
   }
 };
 
@@ -313,12 +271,10 @@ function setLanguage(lang) {
   });
 
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
-    btn.classList.toggle(
-      "lang-active",
-      btn.getAttribute("data-lang-btn") === lang
-    );
+    btn.classList.toggle("lang-active", btn.getAttribute("data-lang-btn") === lang);
   });
 }
+
 function setTheme(theme) {
   const root = document.documentElement;
   const normalized = theme === "dark" ? "dark" : "light";
@@ -327,13 +283,9 @@ function setTheme(theme) {
   localStorage.setItem("siteTheme", normalized);
 
   const toggle = document.getElementById("theme-toggle");
-  if (toggle) {
-    toggle.textContent = normalized === "dark" ? "☀️" : "🌙";
-  }
+  if (toggle) toggle.textContent = normalized === "dark" ? "☀️" : "🌙";
 }
 
-
-// scroll reveal
 function initScrollReveal() {
   const elements = document.querySelectorAll(".reveal-on-scroll");
   const observer = new IntersectionObserver(
@@ -347,12 +299,10 @@ function initScrollReveal() {
     },
     { threshold: 0.1 }
   );
-
   elements.forEach((el) => observer.observe(el));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Dil & tema ayarlarını yükle
   const storedLang = localStorage.getItem("siteLang") || "tr";
   const storedTheme = localStorage.getItem("siteTheme") || "light";
 
@@ -360,47 +310,33 @@ document.addEventListener("DOMContentLoaded", () => {
   setTheme(storedTheme);
   initScrollReveal();
 
-  // Dil butonları
+  // language buttons
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-lang-btn");
-      setLanguage(lang);
-    });
+    btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang-btn")));
   });
 
-  // Tema butonu
+  // theme toggle (if exists)
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      const current =
-        document.documentElement.getAttribute("data-theme") || "light";
-      const next = current === "dark" ? "light" : "dark";
-      setTheme(next);
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      setTheme(current === "dark" ? "light" : "dark");
     });
   }
 
-  // Aktif nav linkini belirle
+  // active nav
   const pathName = window.location.pathname.split("/").pop() || "index.html";
   const current = pathName === "" ? "index.html" : pathName;
 
   document.querySelectorAll(".nav-links a").forEach((link) => {
     const href = link.getAttribute("href");
     link.classList.remove("active");
-
-    if ((current === "index.html" || current === "") && href === "index.html") {
-      link.classList.add("active");
-    } else if (href === current) {
-      link.classList.add("active");
-    }
+    if ((current === "index.html" || current === "") && href === "index.html") link.classList.add("active");
+    else if (href === current) link.classList.add("active");
   });
-
-  // İletişim formu sonrası başarı mesajı
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("success") === "1") {
-    const successBox = document.querySelector("[data-i18n='contact.success']");
-    if (successBox) {
-      successBox.parentElement.style.display = "block";
-    }
-  }
 });
-
+// Footer yılını otomatik ayarla
+const footerYear = document.getElementById("footer-year");
+if (footerYear) {
+  footerYear.textContent = `© ${new Date().getFullYear()}`;
+}
