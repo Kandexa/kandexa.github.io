@@ -10,64 +10,180 @@ export default function Hero() {
   };
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+    },
   };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-slate-50 to-navy-50 pt-20"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      style={{
+        background:
+          "linear-gradient(135deg, #ffffff 0%, #f8f9fb 30%, #f0f4fa 60%, #e8ecf1 100%)",
+      }}
     >
-      {/* Background circuit grid removed for a cleaner look */}
-      <div className="absolute top-1/2 right-0 w-[600px] h-[600px] hero-glow -translate-y-1/2 pointer-events-none" />
+      {/* Soft blue glow — right side */}
+      <div className="absolute top-1/2 right-[5%] w-[700px] h-[700px] -translate-y-1/2 pointer-events-none rounded-full bg-navy-200/15 blur-[120px]" />
+      {/* Secondary glow — top left */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] pointer-events-none rounded-full bg-navy-100/10 blur-[100px]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left: Text */}
-          <motion.div variants={container} initial="hidden" animate="show" className="lg:col-span-5 xl:col-span-6 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 w-full">
+        {/* ── MOBILE LAYOUT (< lg) ── */}
+        <div className="flex flex-col lg:hidden gap-6">
+          {/* 1. Label + Title */}
+          <motion.div variants={container} initial="hidden" animate="show">
             <motion.div variants={fadeUp}>
-              <span className="section-label">ÇOK YÖNLÜ TEKNİK PROFİL</span>
+              <span className="section-label text-[10px] tracking-[0.25em]">
+                ÇOK YÖNLÜ TEKNİK PROFİL
+              </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 leading-tight mt-4 mb-6"
+              className="text-[1.75rem] sm:text-4xl font-extrabold text-navy-900 leading-[1.2] mt-3 mb-4"
             >
-              Kontrol, Otomasyon, Yazılım ve Dijital Sistemler Üreten{" "}
+              Kontrol, Otomasyon,
+              <br className="hidden sm:block" /> Yazılım ve Dijital
+              <br className="hidden sm:block" /> Sistemler Üreten{" "}
+              <span className="text-navy-500">Çok Yönlü Bir Profil</span>
+            </motion.h1>
+
+            {/* 2. Description */}
+            <motion.p
+              variants={fadeUp}
+              className="text-gray-500 text-[15px] leading-relaxed mb-0"
+            >
+              Kontrol ve Otomasyon Teknolojileri ve Bilgisayar Programcılığı
+              alanlarında gelişim gösteren; SCADA, HMI, PLC, endüstriyel
+              otomasyon, yazılım geliştirme, web site ve panel sistemleri,
+              sistem entegrasyonu ve dijital ürün geliştirme gibi birçok alanda
+              aktif projeler üretmeye odaklanan çok yönlü bir teknik profil.
+            </motion.p>
+          </motion.div>
+
+          {/* 3. Hero image — immediately after text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
+            className="relative w-full -mx-2"
+          >
+            <div className="absolute inset-0 bg-navy-300/20 rounded-full blur-[60px] scale-90 pointer-events-none" />
+            <img
+              src="/images/hero-tech.png"
+              alt="Kontrol, Otomasyon, Yazılım ve Dijital Sistemler"
+              className="relative z-10 w-full h-auto drop-shadow-xl"
+            />
+          </motion.div>
+
+          {/* 4. CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-wrap gap-3"
+          >
+            <a
+              href="#value-areas"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector("#value-areas")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="btn-primary shadow-md hover:shadow-lg"
+            >
+              Projelerimi İncele
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector("#contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="btn-outline"
+            >
+              Benimle İletişime Geç
+              <Mail className="w-4 h-4" />
+            </a>
+          </motion.div>
+
+          {/* 5. Highlight chips */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="flex flex-wrap gap-2"
+          >
+            {heroHighlights.map((h) => (
+              <span
+                key={h.text}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/80 border border-gray-200 rounded-full text-xs font-medium text-navy-700"
+              >
+                <span className="w-1 h-1 rounded-full bg-navy-500" />
+                {h.text}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ── DESKTOP LAYOUT (≥ lg) ── */}
+        <div className="hidden lg:grid lg:grid-cols-12 items-center min-h-[calc(100vh-80px)]">
+          {/* Left column: text */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="lg:col-span-5 z-10 py-16"
+          >
+            <motion.div variants={fadeUp}>
+              <span className="section-label text-[11px] tracking-[0.25em]">
+                ÇOK YÖNLÜ TEKNİK PROFİL
+              </span>
+            </motion.div>
+
+            <motion.h1
+              variants={fadeUp}
+              className="text-[2.75rem] xl:text-5xl font-extrabold text-navy-900 leading-[1.15] mt-5 mb-7"
+            >
+              Kontrol, Otomasyon,
+              <br /> Yazılım ve Dijital
+              <br /> Sistemler Üreten{" "}
               <span className="text-navy-500 relative">
                 Çok Yönlü Bir Profil
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-navy-400/30 rounded-full" />
+                <span className="absolute -bottom-1.5 left-0 w-full h-1 bg-navy-400/30 rounded-full" />
               </span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+              className="text-gray-500 text-base leading-relaxed mb-10 max-w-lg"
             >
-              Kontrol ve Otomasyon Teknolojileri ve Bilgisayar Programcılığı alanlarında
-              gelişim gösteren; SCADA, HMI, PLC, endüstriyel otomasyon, yazılım geliştirme,
-              web site ve panel sistemleri, sistem entegrasyonu ve dijital ürün geliştirme
-              gibi birçok alanda aktif projeler üretmeye odaklanan çok yönlü bir teknik profil.
+              Kontrol ve Otomasyon Teknolojileri ve Bilgisayar Programcılığı
+              alanlarında gelişim gösteren; SCADA, HMI, PLC, endüstriyel
+              otomasyon, yazılım geliştirme, web site ve panel sistemleri,
+              sistem entegrasyonu ve dijital ürün geliştirme gibi birçok alanda
+              aktif projeler üretmeye odaklanan çok yönlü bir teknik profil.
             </motion.p>
 
-            {/* Mobile Image (Visible only on mobile, placed between description and CTA) */}
-            <motion.div variants={fadeUp} className="block lg:hidden my-10 w-full relative">
-              <div className="absolute inset-0 bg-navy-200/30 rounded-full blur-[80px] -z-10" />
-              <img
-                src="/images/hero-tech.png"
-                alt="Kontrol, Otomasyon, Yazılım ve Dijital Sistemler"
-                className="w-[105%] max-w-none -ml-[2.5%] h-auto drop-shadow-2xl relative z-10"
-              />
-            </motion.div>
-
+            {/* CTA */}
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-10">
               <a
                 href="#value-areas"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#value-areas")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .querySelector("#value-areas")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn-primary shadow-md hover:shadow-lg"
+                className="btn-primary shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
               >
                 Projelerimi İncele
                 <ArrowRight className="w-4 h-4" />
@@ -76,20 +192,22 @@ export default function Hero() {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn-outline"
+                className="btn-outline hover:-translate-y-0.5 transition-all"
               >
                 Benimle İletişime Geç
                 <Mail className="w-4 h-4" />
               </a>
             </motion.div>
 
-            {/* Highlight pills */}
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
+            {/* Chips */}
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-2.5">
               {heroHighlights.map((h, i) => (
                 <Reveal key={h.text} delay={0.5 + i * 0.1} direction="up">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-navy-700 shadow-sm">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white/80 backdrop-blur-sm border border-gray-200/80 rounded-full text-xs font-medium text-navy-700 shadow-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-navy-500" />
                     {h.text}
                   </span>
@@ -98,23 +216,27 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Desktop Image */}
+          {/* Right column: hero image — large, free-flowing, NO container/card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] as const }}
-            className="hidden lg:flex lg:col-span-7 xl:col-span-6 relative items-center justify-center -mr-10 xl:-mr-20"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1,
+              delay: 0.35,
+              ease: [0.22, 1, 0.36, 1] as const,
+            }}
+            className="lg:col-span-7 relative flex items-center justify-end"
           >
-            {/* Glow behind image */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-              <div className="w-[110%] h-[110%] bg-navy-200/20 rounded-full blur-[100px]" />
-            </div>
+            {/* Radial blue glow behind image */}
+            <div className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-navy-200/25 blur-[140px] pointer-events-none" />
+
             <motion.img
               src="/images/hero-tech.png"
               alt="Kontrol, Otomasyon, Yazılım ve Dijital Sistemler"
-              className="w-[115%] max-w-none h-auto drop-shadow-2xl relative z-10"
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 w-full max-w-[820px] xl:max-w-[880px] h-auto drop-shadow-[0_25px_60px_rgba(12,26,56,0.18)]"
+              style={{ marginRight: "-6%" }}
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
         </div>

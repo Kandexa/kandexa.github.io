@@ -18,7 +18,7 @@ export default function Process() {
 
           {processSteps.map((step, i) => (
             <Reveal key={step.number} delay={i * 0.1}>
-              <div className="relative z-10 text-center p-6 rounded-xl bg-white border border-gray-100 shadow-sm card-hover hover:shadow-md hover:border-navy-100">
+              <div className="relative z-10 text-center p-7 rounded-2xl bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-navy-100">
                 {/* Step number circle */}
                 <div className="mx-auto w-14 h-14 rounded-full bg-navy-700 text-white flex items-center justify-center text-xl font-bold mb-5 shadow-md">
                   {step.number}

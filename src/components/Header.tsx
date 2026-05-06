@@ -3,6 +3,58 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Mail } from "lucide-react";
 import { menuItems } from "../data/siteData";
 
+/** Premium CK monogram — custom letterforms, not a font glyph */
+function CKLogo({ size = 52 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="CK Monogram"
+    >
+      {/* Background circle with gradient */}
+      <defs>
+        <linearGradient id="ck-bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#142952" />
+          <stop offset="100%" stopColor="#0c1a38" />
+        </linearGradient>
+        <linearGradient id="ck-ring" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#3f65a8" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#1e3a6e" stopOpacity="0.3" />
+        </linearGradient>
+      </defs>
+      {/* Outer ring */}
+      <circle cx="60" cy="60" r="58" stroke="url(#ck-ring)" strokeWidth="2" fill="none" />
+      {/* Filled circle */}
+      <circle cx="60" cy="60" r="54" fill="url(#ck-bg)" />
+      {/* Letter C — open arc, thicker at base, tapers */}
+      <path
+        d="M52 44 C40 44, 32 50, 32 60 C32 70, 40 76, 52 76"
+        stroke="white"
+        strokeWidth="5.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* Letter K — vertical stem + two diagonals */}
+      <line x1="64" y1="42" x2="64" y2="78" stroke="white" strokeWidth="5" strokeLinecap="round" />
+      <path
+        d="M64 60 L82 42"
+        stroke="white"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M64 60 L84 78"
+        stroke="white"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,7 +94,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-[68px] md:h-[76px]">
           {/* Logo */}
           <a
             href="#hero"
@@ -52,18 +104,14 @@ export default function Header() {
             }}
             className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center">
-              <svg width="28" height="28" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.5 16C19.5 16 17 15 15 15C12.5 15 11 17 11 19.5C11 22 11 25 11 25C11 27.5 12.5 29 15 29C17 29 19.5 28 19.5 28" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M24 15V29" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M32 15L24 22L32 29" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <CKLogo size={44} />
             </div>
             <div className="hidden sm:block">
-              <div className="text-navy-900 font-bold text-base leading-tight">
+              <div className="text-navy-900 font-bold text-[15px] leading-tight">
                 Celil Kandemir
               </div>
-              <div className="text-gray-400 text-[10px] leading-tight tracking-wide">
+              <div className="text-gray-400 text-[10px] leading-tight tracking-wide mt-0.5">
                 Kontrol, Otomasyon, Yazılım ve Dijital Sistemler
               </div>
             </div>
@@ -79,9 +127,10 @@ export default function Header() {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-navy-700 transition-colors rounded-md hover:bg-navy-50"
+                className="relative px-4 py-2 text-[13px] font-medium text-gray-600 hover:text-navy-800 transition-colors group/nav"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-navy-600 rounded-full transition-all duration-300 group-hover/nav:w-3/4 group-hover/nav:-translate-x-1/2 opacity-0 group-hover/nav:opacity-100" />
               </a>
             ))}
           </nav>
@@ -93,7 +142,7 @@ export default function Header() {
               e.preventDefault();
               handleNavClick("#contact");
             }}
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-semibold rounded-lg hover:bg-navy-800 transition-all duration-300 shadow-sm hover:shadow-md"
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-800 text-white text-[13px] font-semibold rounded-xl hover:bg-navy-900 transition-all duration-300 shadow-sm hover:shadow-md"
           >
             <Mail className="w-4 h-4" />
             Benimle İletişime Geç
@@ -102,7 +151,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors text-navy-800"
+            className="lg:hidden p-2 -mr-2 rounded-lg hover:bg-gray-100 transition-colors text-navy-800"
             aria-label="Menüyü aç/kapat"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

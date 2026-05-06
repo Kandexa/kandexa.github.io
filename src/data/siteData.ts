@@ -248,8 +248,12 @@ export const contactInfo: ContactInfo[] = [
   {
     type: "linkedin",
     label: "LinkedIn",
-    value: "www.linkedin.com/in/mehmetcelilkandemir",
+    value: "Mehmet Celil Kandemir",
     href: "https://www.linkedin.com/in/mehmetcelilkandemir",
     icon: Link2,
   },
 ];
+
+/* ─── Forms Configuration ─── */
+export const contactFormAccessKey = "0a02ac8b-a975-4a4b-85d4-240ad9a77692";
+
